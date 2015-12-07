@@ -83,9 +83,11 @@ function getXMLHTTPRequest() {
 
     function sortChanged() {
         var x = document.getElementById("sortSel").value.split("_");
+        console.log(x);
         var alg = x[0];
         var key = x[1];
         var url = "./getSortedJSON?alg=" + alg + "&key=" + key;
+        console.log(url);
         loadURL(url, function(data) {
             objs = JSON.parse(data);
             var outS = "";

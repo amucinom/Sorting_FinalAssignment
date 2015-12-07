@@ -32,6 +32,7 @@ app.get("/getSortedJSON", function(req, res) {
 	} else if (alg === "selection") {
 		result = selectionSort(key);
 	}
+
 	res.send(JSON.stringify(result));
 	res.end();
 });
@@ -46,6 +47,7 @@ app.listen(port);
 
 function insertionSort(key) {
 
+	var arr = jsonObj;
 	for (var i = 1; i < arr.length; i++)
     {
         // a temporary copy of the current element
@@ -65,7 +67,7 @@ function insertionSort(key) {
         arr[j] = tmp;
     }
 	// change this!!
-	return jsonObj;
+	return arr;
 }
 
 function bubbleSort(key) {
@@ -85,7 +87,7 @@ function bubbleSort(key) {
 
 
 	// change this!!
-	return jsonObj;
+	return arr;
 }
 
 function selectionSort(key) {
