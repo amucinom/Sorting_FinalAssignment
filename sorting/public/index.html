@@ -4,7 +4,8 @@
 <head>
     <title>Sorting JSON</title>
     <script src='jquery-1.11.3.js'></script>
-    <script src="scripts/script.js" type="text/javascript" charset="utf-8" async defer></script>
+    <!-- <script src="feed.json" type="text/javascript" charset="utf-8"></script> -->
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -32,6 +33,23 @@
         <div id='filterWrapper'>
             <div> <b>Filter Options</b> -- Take-home Final</div>
             <select id='filterSel' onchange='filterChanged()'>
+            <optgroup label="Filter by All">
+                    <option value="all">all</option>
+                    <option value="light">light</option>
+                    <option value="china">china</option>
+                    <option value="horns">horns</option>
+                    <option value="symphony">symphony</option>
+                    <!-- <option value="light">light</option> -->
+                    <option value="pink">pink</option>
+                    <option value="rice">rice</option>
+                    <option value="paisley">paisley</option>
+                    <option value="confectionary">confectionary</option>
+                    <option value="hippy">hippy</option>
+                    <option value="vintage">vintage</option>
+                    <option value="concrete">concrete</option>
+                    <option value="pattern">pattern</option>
+                    <option value="dark">dark</option>
+                </optgroup>
             </select>
         </div>
         <hr>

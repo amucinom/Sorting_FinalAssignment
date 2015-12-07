@@ -37,6 +37,20 @@ app.get("/getSortedJSON", function(req, res) {
 	res.end();
 });
 
+app.get("/getFilteredJSON", function(req, res) {
+	var query = url.parse(req.url).query;
+	var params = querystring.parse(query);
+	var alg = params.alg || "search";
+	var key = params.key || "id";
+	var result = [];
+
+	result = filterJSON();
+
+	res.send(JSON.stringify(result));
+	res.end();
+});
+
+
 app.use(methodOverride());
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
@@ -44,6 +58,11 @@ app.use(errorHandler());
 
 console.log("Simple static server listening at http://" + hostname + ":" + port);
 app.listen(port);
+
+function filterJSON () {
+	var arr = jsonObj;
+	console.log(jsonObj[1].id);
+}
 
 function insertionSort(key) {
 
@@ -108,6 +127,6 @@ function selectionSort(key) {
 }
 
 
-console.log(selectionSort("id"));
-console.log(insertionSort("date"));
-console.log(bubbleSort("title"));
+// console.log(selectionSort("id"));
+// console.log(insertionSort("date"));
+// console.log(bubbleSort("title"));
