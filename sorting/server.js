@@ -45,11 +45,45 @@ console.log("Simple static server listening at http://" + hostname + ":" + port)
 app.listen(port);
 
 function insertionSort(key) {
+
+	for (var i = 1; i < arr.length; i++)
+    {
+        // a temporary copy of the current element
+        var tmp = arr[i];
+        var j;
+
+        // find the position for insertion
+        for (j = i; j > 0; j--)
+        {
+            if (arr[j - 1] < tmp)
+                break;
+            // shift the sorted part to right
+            arr[j] = arr[j - 1];
+        }
+
+        // insert the current element
+        arr[j] = tmp;
+    }
 	// change this!!
 	return jsonObj;
 }
 
 function bubbleSort(key) {
+	var arr = jsonObj;
+	var temp;
+	for (var i = 0; i < arr.length; i++) {
+		// bubble up
+		for (var j = i; j > 0; j--) {
+			if (arr[j], arr[j - 1]) {
+				temp = arr[j];
+        		arr[j] = arr[j - 1];
+        		arr[j - 1] = temp;
+			}
+		}
+
+		}
+
+
 	// change this!!
 	return jsonObj;
 }
@@ -63,7 +97,6 @@ function selectionSort(key) {
 			if (arr[j][key] < arr[min][key])
 				min = j;
 		}
-
 		// put the smallest element at position i
 		var temp = arr[i];
 		arr[i] = arr[min];
